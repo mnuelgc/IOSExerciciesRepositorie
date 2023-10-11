@@ -8,7 +8,7 @@
 import Foundation
 
 enum Tirada : String {
-    case cara, cruz
+    case head, tails
 }
 
 class Moneda{
@@ -17,9 +17,9 @@ class Moneda{
     {
         if(Bool.random())
         {
-            return Tirada.cara
+            return Tirada.head
         }else{
-            return Tirada.cruz
+            return Tirada.tails
         }
     }
 }

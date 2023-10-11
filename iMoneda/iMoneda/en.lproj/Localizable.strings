@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  iMoneda
+
+  Created by Máster Móviles on 11/10/23.
+  
+*/
+
+"head" = "head";
+"tails" = "tails";
+"Its" = "It's";

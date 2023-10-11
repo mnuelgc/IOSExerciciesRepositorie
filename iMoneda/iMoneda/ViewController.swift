@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         tirada = coin.lanzar()
         coinImage.image = UIImage(named: tirada.rawValue)
         
-        coinTextResult.text = "Ha salido \(tirada.rawValue)"
+        coinTextResult.text = "\(NSLocalizedString("Its", comment: "")) \(NSLocalizedString(tirada.rawValue, comment:""))"
     }
     
 }
