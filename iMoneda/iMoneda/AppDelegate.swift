@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  iMoneda
 //
-//  Created by Manuel Gómez Cámara on 11/10/23.
+//  Created by Raquel Guerrero Perucho on 11/10/23.
 //
 
 import UIKit
