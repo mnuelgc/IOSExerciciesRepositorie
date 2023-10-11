@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  iMoneda
 //
-//  Created by Raquel Guerrero Perucho on 11/10/23.
+//  Created by Manuel Gómez Cámaraon 11/10/23.
 //
 
 import UIKit

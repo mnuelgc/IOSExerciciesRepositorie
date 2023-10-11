@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D7BA72F2AD6B4A900A560D3 /* Moneda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BA72E2AD6B4A900A560D3 /* Moneda.swift */; };
 		0D9C95FF2AD6A52400405D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C95FE2AD6A52400405D85 /* AppDelegate.swift */; };
 		0D9C96012AD6A52400405D85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C96002AD6A52400405D85 /* SceneDelegate.swift */; };
 		0D9C96032AD6A52400405D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C96022AD6A52400405D85 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D7BA72E2AD6B4A900A560D3 /* Moneda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moneda.swift; sourceTree = "<group>"; };
 		0D9C95FB2AD6A52400405D85 /* iMoneda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMoneda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9C95FE2AD6A52400405D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D9C96002AD6A52400405D85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				0D9C96002AD6A52400405D85 /* SceneDelegate.swift */,
 				0D9C96022AD6A52400405D85 /* ViewController.swift */,
 				0D9C96042AD6A52400405D85 /* Main.storyboard */,
+				0D7BA72E2AD6B4A900A560D3 /* Moneda.swift */,
 				0D9C96072AD6A52600405D85 /* Assets.xcassets */,
 				0D9C96092AD6A52600405D85 /* LaunchScreen.storyboard */,
 				0D9C960C2AD6A52600405D85 /* Info.plist */,
@@ -141,6 +144,7 @@
 				0D9C96032AD6A52400405D85 /* ViewController.swift in Sources */,
 				0D9C95FF2AD6A52400405D85 /* AppDelegate.swift in Sources */,
 				0D9C96012AD6A52400405D85 /* SceneDelegate.swift in Sources */,
+				0D7BA72F2AD6B4A900A560D3 /* Moneda.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
