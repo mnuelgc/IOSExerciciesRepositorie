@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  7yMedia
 //
-//  Created by Raquel Guerrero Perucho on 23/10/23.
+//  Created by Manuel Gómez Cámara on 23/10/23.
 //
 
 import UIKit

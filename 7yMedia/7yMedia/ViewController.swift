@@ -12,6 +12,21 @@ class ViewController: UIViewController {
     var juego : Juego!
     var viewsCartas : [UIImageView] = []
     
+    let limitesPantalla = UIScreen.main.bounds
+    var anchoPantalla : CGFloat = 0.0
+    var altoPantalla : CGFloat = 0.0
+    
+    var posXInit : Int = 0
+    var posYInit : Int = 0
+    var posXFinal : Int = 0
+    var posYFinal : Int = 0
+    
+    var cardWidthInit : Int = 0
+    var cardWidthFinal : Int = 0
+    
+    var cardHeightInit : Int = 0
+    var cardHeightFinal : Int = 0
+    
     @IBOutlet weak var AskCardButton: UIButton!
     
     @IBOutlet weak var StandThereButton: UIButton!
@@ -25,6 +40,19 @@ class ViewController: UIViewController {
         
         AskCardButton.isEnabled = false
         StandThereButton.isEnabled = false
+        anchoPantalla = limitesPantalla.width
+        altoPantalla = limitesPantalla.height
+        
+        posXInit = -200
+        posYInit = -200
+        posXFinal = Int(self.anchoPantalla * (0.05 + CGFloat(self.viewsCartas.count) * 0.075))
+        posYFinal = Int(self.altoPantalla * 0.1)
+        
+        cardWidthInit = Int(self.anchoPantalla * 0.5)
+        cardHeightInit = Int(self.altoPantalla * 0.26)
+        
+        cardWidthFinal = Int(self.anchoPantalla * 0.25)
+        cardHeightFinal = Int(self.altoPantalla * 0.18)
         // Do any additional setup after loading the view.
     }
     
@@ -32,7 +60,7 @@ class ViewController: UIViewController {
     {
         for v in self.viewsCartas {
             UIView.animate(withDuration: 1) {
-                v.frame = CGRect(x:-200,y:-200, width: 100, height: 150)
+                v.frame = CGRect(x: self.posXInit ,y: self.posYInit, width: self.cardWidthFinal, height: self.cardHeightFinal)
                 v.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
             }
             
@@ -62,16 +90,18 @@ class ViewController: UIViewController {
         if let card = juego.manoJugador.cartas.last{
             let imagen = UIImage(named: String(card.valor) + card.palo.rawValue)
             let imagenView = UIImageView(image: imagen)
-            imagenView.frame = CGRect(x:-200,y:-200,width: 200, height: 300)
+            imagenView.frame = CGRect(x:self.posXInit, y:self.posYInit, width: self.cardWidthInit, height: self.cardHeightInit)
             //La rotamos, para que al "repartirla" haga un efecto de giro
             imagenView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
             
             //si estamos en un viewcontroller de una app, NO sería "vc" sino "self"
             self.view.addSubview(imagenView)
             
-            let posX = 25 + (self.viewsCartas.count * 50)
+
+            let offset = Int(self.anchoPantalla * 0.075 * CGFloat(self.viewsCartas.count))
+            let posNewCard = self.posXFinal + offset
             UIView.animate(withDuration: 1) {
-                imagenView.frame = CGRect(x:posX,y:100, width: 100, height: 150)
+                imagenView.frame = CGRect(x: posNewCard, y: self.posYFinal , width: self.cardWidthFinal, height: self.cardHeightFinal)
                 imagenView.transform = CGAffineTransform(rotationAngle: CGFloat(0));
             }
             viewsCartas.append(imagenView)
