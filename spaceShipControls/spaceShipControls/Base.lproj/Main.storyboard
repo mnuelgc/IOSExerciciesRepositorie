@@ -45,6 +45,9 @@
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="¡Emergencia!"/>
+                                <connections>
+                                    <action selector="emergencyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gxc-sh-YvB"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t02-xq-ygR">
                                 <rect key="frame" x="0.0" y="646" width="393" height="162"/>

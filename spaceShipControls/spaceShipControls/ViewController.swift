@@ -18,6 +18,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderValue: UILabel!
     
     
+    let multichoice = UIAlertController(
+        title: "¡¡¡Emergencia!!!",
+        message: "Necesitamos una solución",
+        preferredStyle: .actionSheet)
+    
+    let naveSalvavidas = UIAlertAction(
+        title: "Lanzar nave salvavidas", style: .default){
+            action in
+            print("Nave salvavidas lanzada")
+        }
+    
+    let hiperespacio = UIAlertAction(
+        title: "Saltar al hiperespacio", style: .default){
+            action in
+            print("Saltando al hiperespacio")
+        }
+    
+    let autodestruccion = UIAlertAction(
+        title: "Autodestrucción", style: .destructive){
+            action in
+            print("Comenzando la cuenta atrás...")
+        }
+    
+ 
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +54,9 @@ class ViewController: UIViewController {
         slider.value = 50
         sliderValue.text = String(Int(slider.value))
         
+        multichoice.addAction(naveSalvavidas)
+        multichoice.addAction(hiperespacio)
+        multichoice.addAction(autodestruccion)
         
     }
 
@@ -48,6 +77,12 @@ class ViewController: UIViewController {
         sliderValue.text = String(Int(slider.value))
     }
     
+    
+    @IBAction func emergencyCall(_ sender: UIButton) {
+        self.present(multichoice, animated: true)
+    }
+    
+
     
 }
 
