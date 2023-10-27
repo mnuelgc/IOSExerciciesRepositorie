@@ -13,11 +13,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var text: UITextView!
     
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var sliderValue: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        slider.minimumValue = 0
+        slider.maximumValue = 100
+        slider.value = 50
+        sliderValue.text = String(Int(slider.value))
+        
+        
     }
 
     
@@ -33,6 +44,9 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func onSliderChangeValue(_ sender: UISlider) {
+        sliderValue.text = String(Int(slider.value))
+    }
     
     
 }
