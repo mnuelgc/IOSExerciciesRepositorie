@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sliderValue: UILabel!
     
+    @IBOutlet weak var picker: UIPickerView!
+    
+    
+    let gestorPicker = GestorPicker()
     
     let multichoice = UIAlertController(
         title: "¡¡¡Emergencia!!!",
@@ -58,6 +62,9 @@ class ViewController: UIViewController {
         multichoice.addAction(hiperespacio)
         multichoice.addAction(autodestruccion)
         
+        self.picker.delegate = self.gestorPicker
+        self.picker.dataSource = self.gestorPicker
+        self.picker.selectedRow(inComponent: 0)
     }
 
     

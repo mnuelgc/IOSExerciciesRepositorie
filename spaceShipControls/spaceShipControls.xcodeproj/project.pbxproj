@@ -13,6 +13,7 @@
 		0D04649D2AEA7C8A00C9F1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D04649B2AEA7C8A00C9F1F0 /* Main.storyboard */; };
 		0D04649F2AEA7C8A00C9F1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D04649E2AEA7C8A00C9F1F0 /* Assets.xcassets */; };
 		0D0464A22AEA7C8A00C9F1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0464A02AEA7C8A00C9F1F0 /* LaunchScreen.storyboard */; };
+		C793DB7B2AEC2320006970BE /* GestorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793DB7A2AEC2320006970BE /* GestorPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0D04649E2AEA7C8A00C9F1F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D0464A12AEA7C8A00C9F1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D0464A32AEA7C8A00C9F1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C793DB7A2AEC2320006970BE /* GestorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestorPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		0D0464942AEA7C8A00C9F1F0 /* spaceShipControls */ = {
 			isa = PBXGroup;
 			children = (
+				C793DB7A2AEC2320006970BE /* GestorPicker.swift */,
 				0D0464952AEA7C8A00C9F1F0 /* AppDelegate.swift */,
 				0D0464972AEA7C8A00C9F1F0 /* SceneDelegate.swift */,
 				0D0464992AEA7C8A00C9F1F0 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 				0D04649A2AEA7C8A00C9F1F0 /* ViewController.swift in Sources */,
 				0D0464962AEA7C8A00C9F1F0 /* AppDelegate.swift in Sources */,
 				0D0464982AEA7C8A00C9F1F0 /* SceneDelegate.swift in Sources */,
+				C793DB7B2AEC2320006970BE /* GestorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
