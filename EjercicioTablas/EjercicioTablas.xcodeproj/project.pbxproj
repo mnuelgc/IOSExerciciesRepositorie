@@ -13,6 +13,8 @@
 		0D294BA72AF24BF3001AE780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D294BA52AF24BF3001AE780 /* Main.storyboard */; };
 		0D294BA92AF24BF4001AE780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D294BA82AF24BF4001AE780 /* Assets.xcassets */; };
 		0D294BAC2AF24BF4001AE780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D294BAA2AF24BF4001AE780 /* LaunchScreen.storyboard */; };
+		0D294BB42AF25207001AE780 /* DSTabla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D294BB32AF25207001AE780 /* DSTabla.swift */; };
+		0D294BB62AF25C5E001AE780 /* DelegateTabla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D294BB52AF25C5E001AE780 /* DelegateTabla.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0D294BA82AF24BF4001AE780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D294BAB2AF24BF4001AE780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D294BAD2AF24BF4001AE780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D294BB32AF25207001AE780 /* DSTabla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTabla.swift; sourceTree = "<group>"; };
+		0D294BB52AF25C5E001AE780 /* DelegateTabla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTabla.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				0D294BA82AF24BF4001AE780 /* Assets.xcassets */,
 				0D294BAA2AF24BF4001AE780 /* LaunchScreen.storyboard */,
 				0D294BAD2AF24BF4001AE780 /* Info.plist */,
+				0D294BB32AF25207001AE780 /* DSTabla.swift */,
+				0D294BB52AF25C5E001AE780 /* DelegateTabla.swift */,
 			);
 			path = EjercicioTablas;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D294BA42AF24BF3001AE780 /* ViewController.swift in Sources */,
+				0D294BB62AF25C5E001AE780 /* DelegateTabla.swift in Sources */,
 				0D294BA02AF24BF3001AE780 /* AppDelegate.swift in Sources */,
 				0D294BA22AF24BF3001AE780 /* SceneDelegate.swift in Sources */,
+				0D294BB42AF25207001AE780 /* DSTabla.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
