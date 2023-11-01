@@ -19,6 +19,7 @@ class DSTabla : NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = UITableViewCell(style: .default, reuseIdentifier:"cellIdentify")
         celda.textLabel?.text = "\(lista[indexPath.row])"
+        celda.textLabel?.textColor = UIColor.black
         return celda
     }
     
