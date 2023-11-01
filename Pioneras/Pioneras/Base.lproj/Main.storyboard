@@ -13,40 +13,40 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pioneras" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rVP-MD-DDD">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHs-pG-ghe">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="280.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="253"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <backgroundConfiguration key="background" image="hopper"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="ORm-V1-jUA" kind="show" id="fqH-tG-fOm"/>
+                                            <segue destination="ORm-V1-jUA" kind="show" identifier="hopper" id="fqH-tG-fOm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPK-kn-IIa">
-                                        <rect key="frame" x="0.0" y="280.66666666666663" width="393" height="280.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="253" width="393" height="253"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <backgroundConfiguration key="background" image="liskov"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="ORm-V1-jUA" kind="show" id="Ywq-up-W4F"/>
+                                            <segue destination="ORm-V1-jUA" kind="show" identifier="liskov" id="Ywq-up-W4F"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-SM-2JN">
-                                        <rect key="frame" x="0.0" y="561.33333333333337" width="393" height="280.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="506" width="393" height="253"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <backgroundConfiguration key="background" image="lovelace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="ORm-V1-jUA" kind="show" id="kjJ-ld-1MY"/>
+                                            <segue destination="ORm-V1-jUA" kind="show" identifier="lovelace" id="kjJ-ld-1MY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="48" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Secundario View Controller-->
         <scene sceneID="wtj-wK-Qfq">
             <objects>
-                <viewController id="ORm-V1-jUA" sceneMemberID="viewController">
+                <viewController id="ORm-V1-jUA" customClass="SecundarioViewController" customModule="Pioneras" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MsY-IX-soT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="igj-Fh-qkh"/>
+                                    <segue destination="EQs-Us-Pm9" kind="unwind" unwindAction="retornoDeSecundariaWithSegue:" id="GDe-GC-SmY"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HuO-Em-PsD">
@@ -104,14 +104,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fMk-cq-FEt"/>
+                    <connections>
+                        <outlet property="textField" destination="HuO-Em-PsD" id="q4p-4u-0kx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTH-Uv-RYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EQs-Us-Pm9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1246.5648854961833" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ywq-up-W4F"/>
+        <segue reference="kjJ-ld-1MY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="hopper" width="320" height="215"/>

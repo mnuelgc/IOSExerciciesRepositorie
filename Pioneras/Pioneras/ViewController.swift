@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     @IBAction func retornoDeSecundaria(segue: UIStoryboardSegue) {
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc2 = segue.destination as? SecundarioViewController {
+            vc2.nombreAsset = segue.identifier! + "_bio"
+        }
+    }
 
 
 }
