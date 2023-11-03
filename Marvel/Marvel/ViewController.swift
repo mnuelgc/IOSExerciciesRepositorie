@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        mostrarPersonajes(comienzanPor: "Spider")
+       // mostrarPersonajes(comienzanPor: "Spider")
     }
 
 
