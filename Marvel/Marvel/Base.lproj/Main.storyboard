@@ -37,6 +37,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7GR-7A-MVv" kind="show" id="fdV-Rt-2Af"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -81,6 +84,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3eA-l6-vfi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F6c-0P-kAX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -93,48 +97,50 @@
             </objects>
             <point key="canvasLocation" x="159.54198473282443" y="-670.42253521126759"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Controller-->
         <scene sceneID="Hw4-I3-iiB">
             <objects>
-                <viewController id="7GR-7A-MVv" sceneMemberID="viewController">
+                <viewController id="7GR-7A-MVv" customClass="DetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YKZ-ue-qjG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-A3-CaI">
-                                <rect key="frame" x="277" y="103" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="Pfx-Z7-oYf" kind="show" id="tR3-tH-iDc"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8V-6C-ec5">
+                                <rect key="frame" x="50" y="183" width="293" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyw-no-EYs">
+                                <rect key="frame" x="50" y="303.33333333333326" width="293" height="315.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XAP-mA-ZJV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iyw-no-EYs" firstAttribute="top" secondItem="e8V-6C-ec5" secondAttribute="bottom" constant="100" id="1sP-XY-9br"/>
+                            <constraint firstItem="XAP-mA-ZJV" firstAttribute="trailing" secondItem="e8V-6C-ec5" secondAttribute="trailing" constant="50" id="B64-kp-7kR"/>
+                            <constraint firstItem="e8V-6C-ec5" firstAttribute="top" secondItem="XAP-mA-ZJV" secondAttribute="top" constant="80" id="GTI-et-BGe"/>
+                            <constraint firstItem="e8V-6C-ec5" firstAttribute="leading" secondItem="XAP-mA-ZJV" secondAttribute="leading" constant="50" id="Gi3-d5-oIa"/>
+                            <constraint firstItem="XAP-mA-ZJV" firstAttribute="trailing" secondItem="iyw-no-EYs" secondAttribute="trailing" constant="50" id="Lz5-aA-QBb"/>
+                            <constraint firstItem="XAP-mA-ZJV" firstAttribute="bottom" secondItem="iyw-no-EYs" secondAttribute="bottom" constant="150" id="Mu8-WT-EMg"/>
+                            <constraint firstItem="iyw-no-EYs" firstAttribute="leading" secondItem="XAP-mA-ZJV" secondAttribute="leading" constant="50" id="v0o-mB-URJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mAk-GD-Qq7"/>
+                    <connections>
+                        <outlet property="bio" destination="iyw-no-EYs" id="Vay-lc-5wh"/>
+                        <outlet property="name" destination="e8V-6C-ec5" id="FRg-Lt-2ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leM-dC-pMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773" y="-997"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Grv-Q1-4Ne">
-            <objects>
-                <viewController id="Pfx-Z7-oYf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9ti-cq-hht">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yIZ-38-d4w"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="GwH-c2-Dze"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vua-oX-zeE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3547.3282442748091" y="-997.18309859154931"/>
+            <point key="canvasLocation" x="2771.7557251908397" y="-997.18309859154931"/>
         </scene>
         <!--Chracters-->
         <scene sceneID="d2y-rA-mce">
@@ -157,6 +163,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

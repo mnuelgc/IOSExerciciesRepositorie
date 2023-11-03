@@ -9,23 +9,13 @@ import UIKit
 import Marvelous
 
 class ListController: UIViewController, UISearchResultsUpdating, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.results.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "tableCell")
-        cell.textLabel?.text = self.results[indexPath.row].name
-        return cell
-    }
     
     @IBOutlet weak var table: UITableView!
-    
     let throttler = Throttler(minimumDelay: 0.5)
-    
     var searchController : UISearchController!
-    
     var results : [RCCharacterObject] = []
+    var mySpinner = UIActivityIndicatorView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +25,16 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Search"
             
-        self.searchController.searchBar.sizeToFit()
-        self.table.tableHeaderView = searchController.searchBar
-        
+        self.navigationItem.searchController = searchController
         self.table.dataSource = self
+        
+        
+        mySpinner.hidesWhenStopped = true
+        self.view.addSubview(mySpinner)
+        
+        mySpinner.center.x = self.view.center.x
+        mySpinner.center.y = self.view.center.y
+        self.view.bringSubviewToFront(self.mySpinner)
     }
     
 
@@ -48,6 +44,7 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
             //remove white characters
             
             let searchedTextTrim = searchedText.trimmingCharacters(in: .whitespacesAndNewlines)
+
             self.mostrarPersonajes(comienzanPor: searchedTextTrim)
         }
     }
@@ -55,6 +52,7 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
     func mostrarPersonajes(comienzanPor cadena : String) {
         self.results.removeAll()
         if cadena.count > 2{
+            self.mySpinner.startAnimating()
             let marvelAPI = RCMarvelAPI()
             //PUEDES CAMBIAR ESTO PARA PONER TUS CLAVES
             marvelAPI.publicKey = "9f21850b7afb93929bb2f044d2d1f661"
@@ -69,13 +67,33 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
                         self.results.append(personaje)
                         print(personaje.name ?? "")
                         
-                        OperationQueue.main.addOperation() {
-                            self.table.reloadData();
-                        }
                     }
                     print("Hay \(personajes.count) personajes")
+                    OperationQueue.main.addOperation() {
+                        self.mySpinner.stopAnimating()
+                        self.table.reloadData();
+                    }
                 }
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.results.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "tableCell")
+        cell.textLabel?.text = self.results[indexPath.row].name
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc2 = segue.destination as? DetailController {
+            vc2.character = results[table.indexPathForSelectedRow!.row]
+        }
+    }
+    
+    
 }
