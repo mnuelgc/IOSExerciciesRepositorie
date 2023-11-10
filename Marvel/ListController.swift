@@ -8,7 +8,7 @@
 import UIKit
 import Marvelous
 
-class ListController: UIViewController, UISearchResultsUpdating, UITableViewDataSource{
+class ListController: UIViewController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var table: UITableView!
     let throttler = Throttler(minimumDelay: 0.5)
@@ -27,6 +27,7 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
             
         self.navigationItem.searchController = searchController
         self.table.dataSource = self
+        self.table.delegate = self
         
         
         mySpinner.hidesWhenStopped = true
@@ -87,13 +88,26 @@ class ListController: UIViewController, UISearchResultsUpdating, UITableViewData
         cell.textLabel?.text = self.results[indexPath.row].name
         return cell
     }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let vc2 = segue.destination as? DetailController {
-            vc2.character = results[table.indexPathForSelectedRow!.row]
+        if (segue.identifier == "charSelected") {
+            if let vc2 = segue.destination as? DetallesController {
+                    vc2.character = results[table.indexPathForSelectedRow!.row]
+                self.results.removeAll()
+                self.table.reloadData();
+            }
         }
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        if(!results.isEmpty){
+            
+            performSegue(withIdentifier: "charSelected", sender: indexPath)
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
     
 }
